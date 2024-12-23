@@ -32,5 +32,7 @@ public class AuthenticationService {
         return true; // Successfully registered
     }
 
-    
+     public static Map<String, User> getUsers() {
+        return users;
+    }
 }

@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import models.User;
+import services.AdminService;
 import services.AuthenticationService;
 
 
@@ -60,7 +61,7 @@ public class Main {
                     }
                     break;
 
-                case 3:
+                   case 3:
                     System.out.println("Exiting program...");
                     return;
 
@@ -98,10 +99,20 @@ public class Main {
             System.out.println("4. View Booked Items");
             System.out.println("5. Logout");
             System.out.print("Enter choice: ");
+            int choice = getValidChoice(scanner, 1, 5);  // Admin menu range 1-5
 
-         
+            switch (choice) {
+                case 1:
+                    AdminService.viewRegisteredCustomers();
+                    break;
+
+                
+                default:
+                    System.out.println("Invalid choice.");
+            }
         }
     }
+
 
     private static void customerMenu(Scanner scanner, User user) {
         while (true) {
