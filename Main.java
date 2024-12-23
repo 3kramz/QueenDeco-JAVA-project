@@ -50,6 +50,24 @@ public class Main {
         }
     }
 
+    private static int getValidChoice(Scanner scanner, int min, int max) {
+        int choice = -1;
+        while (true) {
+            try {
+                choice = scanner.nextInt();
+                scanner.nextLine();  // Consume newline
+                if (choice >= min && choice <= max) {
+                    break;
+                } else {
+                    System.out.println("Please enter a valid choice between " + min + " and " + max + ".");
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please enter a number between " + min + " and " + max + ".");
+                scanner.nextLine();  // Consume the invalid input
+            }
+        }
+        return choice;
+    }
 
     private static void adminMenu(Scanner scanner) {
         while (true) {
