@@ -120,13 +120,15 @@ public class Main {
                     AdminService.viewBookings();
                     break;
                 
+                case 5:
+                    System.out.println("Logging out...");
+                    return;
 
                 default:
                     System.out.println("Invalid choice.");
             }
         }
     }
-
 
     private static void customerMenu(Scanner scanner, User user) {
         while (true) {
