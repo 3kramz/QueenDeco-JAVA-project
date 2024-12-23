@@ -112,6 +112,12 @@ public class Main {
                     AdminService.addInventoryItem(item);
                     break;
 
+                case 3:
+                    AdminService.viewInventory();
+                    break;
+
+
+
                 
                 default:
                     System.out.println("Invalid choice.");
@@ -127,7 +133,17 @@ public class Main {
             System.out.println("2. Book Item");
             System.out.println("3. Logout");
             System.out.print("Enter choice: ");
-        
+            int choice = getValidChoice(scanner, 1, 3);  // Customer menu range 1-3
+
+            switch (choice) {
+                case 1:
+                    AdminService.viewInventory();
+                    break;
+
+                
+                default:
+                    System.out.println("Invalid choice.");
+            }
         }
     }
 }

@@ -26,9 +26,17 @@ public class AdminService {
     }
 
 
-        public static void addInventoryItem(String item) {
+    public static void addInventoryItem(String item) {
         inventory.add(item);
         System.out.println("Inventory Item Added: " + item);
+    }
+
+
+    public static void viewInventory() {
+        System.out.println("\n--- Inventory ---");
+        for (String item : inventory) {
+            System.out.println(item);
+        }
     }
 
 
