@@ -106,6 +106,12 @@ public class Main {
                     AdminService.viewRegisteredCustomers();
                     break;
 
+                case 2:
+                    System.out.print("Enter item name: ");
+                    String item = scanner.nextLine();
+                    AdminService.addInventoryItem(item);
+                    break;
+
                 
                 default:
                     System.out.println("Invalid choice.");

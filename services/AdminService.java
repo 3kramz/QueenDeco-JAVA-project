@@ -1,13 +1,14 @@
 package services;
 
-import models.User;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import models.User;
 
 public class AdminService {
 
     private static Map<String, User> users = AuthenticationService.getUsers();
+    private static List<String> inventory = new ArrayList<>();
 
 
     // Admin: View all registered customers
@@ -22,6 +23,12 @@ public class AdminService {
                         ", Email: " + user.getEmail());
             }
         }
+    }
+
+
+        public static void addInventoryItem(String item) {
+        inventory.add(item);
+        System.out.println("Inventory Item Added: " + item);
     }
 
 
