@@ -1,6 +1,7 @@
 import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
+import models.User;
+import services.AuthenticationService;
+
 
 public class Main {
 
@@ -13,6 +14,7 @@ public class Main {
             System.out.println("2. Register");
             System.out.println("3. Exit");
             System.out.print("Enter choice: ");
+            int choice = getValidChoice(scanner, 1, 3);
 
             switch (choice) {
                 case 1:
@@ -21,10 +23,21 @@ public class Main {
                     System.out.print("Enter password: ");
                     String password = scanner.nextLine();
 
-
+                    User user = AuthenticationService.authenticate(username, password);
+                    if (user != null) {
+                        System.out.println("Login successful. Welcome " + user.getName());
+                        if ("admin".equals(user.getRole())) {
+                            adminMenu(scanner);
+                        } else {
+                            customerMenu(scanner, user);
+                        }
+                    } else {
+                        System.out.println("Invalid credentials.");
+                    }
                     break;
 
-                case 2:
+                    
+               case 2:
                     System.out.print("Enter username: ");
                     String newUsername = scanner.nextLine();
                     System.out.print("Enter password: ");
