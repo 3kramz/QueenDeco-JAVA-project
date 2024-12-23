@@ -9,6 +9,7 @@ public class AdminService {
 
     private static Map<String, User> users = AuthenticationService.getUsers();
     private static List<String> inventory = new ArrayList<>();
+    private static List<String> bookedItems = new ArrayList<>();
 
 
     // Admin: View all registered customers
@@ -40,5 +41,8 @@ public class AdminService {
     }
 
 
-
+    public static void bookItem(String item, String customerName, String address, String phone) {
+        bookedItems.add("Item: " + item + " | Customer: " + customerName + " | Address: " + address + " | Phone: " + phone);
+        System.out.println("Booking successful! Item: " + item + ", Customer: " + customerName);
+    }
 }

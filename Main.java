@@ -116,8 +116,6 @@ public class Main {
                     AdminService.viewInventory();
                     break;
 
-
-
                 
                 default:
                     System.out.println("Invalid choice.");
@@ -140,6 +138,19 @@ public class Main {
                     AdminService.viewInventory();
                     break;
 
+                case 2:
+                    System.out.print("Enter item name to book: ");
+                    String item = scanner.nextLine();
+                    System.out.print("Enter your address: ");
+                    String address = scanner.nextLine();
+                    System.out.print("Enter your phone: ");
+                    String phone = scanner.nextLine();
+                    AdminService.bookItem(item, user.getName(), address, phone);
+                    break;
+
+                case 3:
+                    System.out.println("Logging out...");
+                    return;
                 
                 default:
                     System.out.println("Invalid choice.");
