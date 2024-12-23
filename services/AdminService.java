@@ -45,4 +45,15 @@ public class AdminService {
         bookedItems.add("Item: " + item + " | Customer: " + customerName + " | Address: " + address + " | Phone: " + phone);
         System.out.println("Booking successful! Item: " + item + ", Customer: " + customerName);
     }
+
+
+        public static void viewBookings() {
+        System.out.println("\n--- Booked Items ---");
+        for (String booking : bookedItems) {
+            System.out.println(booking);
+        }
+    }
+
+
+
 }

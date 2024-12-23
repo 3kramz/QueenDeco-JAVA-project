@@ -116,7 +116,11 @@ public class Main {
                     AdminService.viewInventory();
                     break;
 
+                case 4:
+                    AdminService.viewBookings();
+                    break;
                 
+
                 default:
                     System.out.println("Invalid choice.");
             }
