@@ -1,9 +1,9 @@
 package services;
 
 
-import models.User;
 import java.util.HashMap;
 import java.util.Map;
+import models.User;
 
 
 
@@ -23,4 +23,14 @@ public class AuthenticationService {
         }
         return null; // Invalid credentials
     }
+
+        public static boolean registerUser(String username, String password, String role, String name, String address, String phone, String email) {
+        if (users.containsKey(username)) {
+            return false; // Username already exists
+        }
+        users.put(username, new User(username, password, role, name, address, phone, email));
+        return true; // Successfully registered
+    }
+
+    
 }

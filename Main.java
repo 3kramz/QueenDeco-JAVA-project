@@ -36,8 +36,9 @@ public class Main {
                     }
                     break;
 
-                    
-               case 2:
+
+
+                case 2:
                     System.out.print("Enter username: ");
                     String newUsername = scanner.nextLine();
                     System.out.print("Enter password: ");
@@ -51,6 +52,12 @@ public class Main {
                     System.out.print("Enter email: ");
                     String email = scanner.nextLine();
 
+                    boolean success = AuthenticationService.registerUser(newUsername, newPassword, "customer", name, address, phone, email);
+                    if (success) {
+                        System.out.println("Registration successful.");
+                    } else {
+                        System.out.println("Username already exists.");
+                    }
                     break;
 
                 case 3:
